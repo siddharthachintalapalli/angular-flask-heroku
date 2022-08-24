@@ -1,0 +1,91 @@
+<app-home></app-home>
+<div class="container">
+    <div style="margin-top: 10px;">
+      <mat-form-field style="background-color:aliceblue; border-radius: 5px; " appearance="standard">
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+      </mat-form-field>
+      
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort>
+      
+          <!-- ID Column -->
+          <ng-container matColumnDef="CardID">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> CustID </th>
+            <td mat-cell *matCellDef="let row"> {{row[0]}} </td>
+          </ng-container>
+      
+          <!-- Progress Column -->
+          <ng-container matColumnDef="CustID">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> CustID </th>
+            <td mat-cell *matCellDef="let row"> {{row[1]}} </td>
+          </ng-container>
+      
+          <!-- Name Column -->
+          <ng-container matColumnDef="Title">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Title </th>
+            <td mat-cell *matCellDef="let row"> {{row[2]}} </td>
+          </ng-container>
+      
+          <!-- Fruit Column -->
+          <ng-container matColumnDef="Country">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Country </th>
+            <td mat-cell *matCellDef="let row"> {{row[3]}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="Address">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Address </th>
+            <td mat-cell *matCellDef="let row"> {{row[4]}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="PostalCode">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> PostalCode </th>
+            <td mat-cell *matCellDef="let row"> {{row[5]}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="City">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> City </th>
+            <td mat-cell *matCellDef="let row"> {{row[6]}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="Mail">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Mail </th>
+            <td mat-cell *matCellDef="let row"> {{row[7]}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="BirthDate">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> BirthDate </th>
+            <td mat-cell *matCellDef="let row"> {{row[8]}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="ValidityDate">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> ValidityDate </th>
+            <td mat-cell *matCellDef="let row"> {{row[9]}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+            <td mat-cell *matCellDef="let row">
+              <button mat-icon-button color="primary" (click)="update(row)">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button color="warn" (click)="delete(row)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+      
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      
+          <!-- Row shown when there is no matching data. -->
+          <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+          </tr>
+        </table>
+      
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+      </div>
+      <button style="margin-bottom: 10px; margin-top: 10px;" mat-flat-button color="warn" (click)="openDialog()">New</button>
+    </div>
+  </div>

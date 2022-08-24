@@ -1,0 +1,135 @@
+<div class="container mt-5 mb-5 d-flex justify-content-center pos">
+    <div class="card">
+        <div class="card-body">
+            <form #f="ngForm" novalidate (ngSubmit)="registerUser()">
+                <!-- <div class="d-flex flex-row"> <label class="radio mr-1"> <input [(ngModel)]="userModel.type" #type="ngModel" type="radio"
+                            name="type" value="basic" checked>
+                        <span> <i class="fa fa-user"></i> Basic </span> </label> <label class="radio"> <input [(ngModel)]="userModel.type"
+                            #type="ngModel" name="type" type="radio" value="pro"> <span> <i
+                                class="fa fa-plus-circle"></i>
+                            Pro </span>
+                    </label> </div> -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <input [(ngModel)]="userModel.CardID" #cardID="ngModel" [class.is-invalid]="cardID.invalid && cardID.touched"
+                                class="form-control" type="text" placeholder="Card ID" required name="cardID">
+                            <small [class.d-none]="cardID.valid || cardID.untouched" class="text-danger"></small>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <input [(ngModel)]="userModel.CustID" #custID="ngModel" [class.is-invalid]="custID.invalid && custID.touched"
+                                class="form-control" type="text" placeholder="Customer ID" required name="custID">
+                            <small [class.d-none]="custID.valid || custID.untouched" class="text-danger"></small>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <input [(ngModel)]="userModel.Title" #title="ngModel" [class.is-invalid]="title.invalid && title.touched"
+                                class="form-control" type="text" placeholder="Title" required name="title">
+                            <small [class.d-none]="title.valid || title.untouched" class="text-danger"></small>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <input [(ngModel)]="userModel.Country" #country="ngModel" [class.is-invalid]="country.invalid && country.touched"
+                                class="form-control" type="text" placeholder="Country" required name="country">
+                            <small [class.d-none]="country.valid || country.untouched" class="text-danger"></small>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <input [(ngModel)]="userModel.Address" #address="ngModel" [class.is-invalid]="address.invalid && address.touched"
+                                class="form-control" type="text" placeholder="Dddress" required name="address">
+                            <small [class.d-none]="address.valid || address.untouched" class="text-danger"></small>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <input [(ngModel)]="userModel.PostalCode" #postalcode="ngModel" [class.is-invalid]="postalcode.invalid && postalcode.touched"
+                                class="form-control" type="text" placeholder="Postal code" required name="postalcode">
+                            <small [class.d-none]="postalcode.valid || postalcode.untouched" class="text-danger"></small>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <input [(ngModel)]="userModel.City" #city="ngModel" [class.is-invalid]="city.invalid && city.touched"
+                                class="form-control" type="text" placeholder="City" required name="city">
+                            <small [class.d-none]="city.valid || city.untouched" class="text-danger"></small>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input [(ngModel)]="userModel.Mail" #email="ngModel" [class.is-invalid]="email.invalid && email.touched"
+                                    class="form-control" type="email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                                    name="email" placeholder="Email ID" required>
+                            </div>
+                            <small class="text-danger" [class.d-none]="email.valid || email.untouched"></small>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <input [(ngModel)]="userModel.BirthDate" #dob="ngModel" [class.is-invalid]="dob.invalid && dob.touched"
+                                class="form-control" type="text" placeholder="Date of Birth (dd/mm/yyyy)" required name="dob">
+                            <small [class.d-none]="city.valid || city.untouched" class="text-danger"></small>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            
+                            <input [(ngModel)]="userModel.ValidityDate" #validity="ngModel" [class.is-invalid]="validity.invalid && validity.touched"
+                                class="form-control" type="text" placeholder="Validity Date (dd/mm/yyyy)" required name="validity">
+                            <small [class.d-none]="validity.valid || validity.untouched" class="text-danger"></small>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <div class="input-group"> <input [(ngModel)]="userModel.password" required minlength="6" #password="ngModel" class="form-control"
+                                    type="password" name="password" placeholder="Password">
+
+                            </div>
+                            <small class="text-danger" [class.d-none]="password.valid || password.untouched">Password should be atleast 6 characters long</small>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <div class="input-group"> <input [(ngModel)]="userModel.confirmpassword" #confirmpassword="ngModel" class="form-control"
+                                [class.is-invalid]="(userModel.password!=userModel.confirmpassword) && confirmpassword.touched"
+                                    type="password" name="confirmpassword" placeholder="Confirm Password" required> </div>
+                            <small class="text-danger" [class.d-none]="(userModel.password==userModel.confirmpassword) || confirmpassword.untouched">Passwords did not match</small>
+                        </div>
+                    </div>
+                </div> -->
+                <div class=" d-flex flex-column text-center px-5 mt-3 mb-3"> <small class="agree-text">If already
+                        registered</small> <a href="/" class="terms">Login</a>
+                    <button [disabled]="f.form.invalid" class="btn btn-primary btn-block confirm-button" type="submit" >Submit</button>
+                </div>
+                <!-- {{f.value|json}} -->
+            </form>
+        </div>
+    </div>
+</div>

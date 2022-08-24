@@ -1,0 +1,60 @@
+<h1 mat-dailog-title>Add User Data</h1>
+<div mat-dialog-content>
+    <form [formGroup]="custForm">
+        <mat-form-field appearance="outline">
+            <mat-label>CardID</mat-label>
+            <input formControlName="CardID" matInput type="number" placeholder="CardID">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline">
+            <mat-label>CustID</mat-label>
+            <input formControlName="CustID" matInput placeholder="CustID">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline">
+            <mat-label>Title</mat-label>
+            <input formControlName="Title" matInput placeholder="Title">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline">
+            <mat-label>Country</mat-label>
+            <input formControlName="Country" matInput placeholder="Country">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline">
+            <mat-label>Address</mat-label>
+            <input formControlName="Address" matInput placeholder="Address">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline">
+            <mat-label>PostalCode</mat-label>
+            <input formControlName="PostalCode" matInput placeholder="PostalCode">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline">
+            <mat-label>City</mat-label>
+            <input formControlName="City" matInput placeholder="City">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline">
+            <mat-label>Mail</mat-label>
+            <input formControlName="Mail" matInput type="email" placeholder="Mail">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline">
+            <mat-label>BirthDate</mat-label>
+            <input formControlName="ValidityDate" matInput placeholder="ValidityDate">
+        </mat-form-field>
+    
+          <mat-form-field appearance="outline">
+            <mat-label>ValidityDate</mat-label>
+            <input formControlName="ValidityDate" matInput placeholder="ValidityDate">
+        </mat-form-field>
+    </form>
+    
+</div>
+
+<div mat-dialog-action [align]="'end'">
+    <button mat-flat-button color="warn" mat-dialog-close>Close</button>
+    <button style="margin-left: 10px;" mat-flat-button color="primary" (click)="add()">Add</button>
+</div>

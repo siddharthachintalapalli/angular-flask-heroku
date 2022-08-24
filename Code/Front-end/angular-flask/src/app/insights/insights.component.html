@@ -1,0 +1,27 @@
+<app-home></app-home>
+
+<mat-toolbar>
+    
+    <span class="example-spacer" style="margin-left: 300px;">
+    <button style="margin-left: 10px; margin-right: 10px;" mat-flat-button  (click)="cluster_dist()">Cluster Distribution</button>
+    <button style="margin-left: 10px; margin-right: 10px;" mat-flat-button  (click)="gender_dist()">Gender Distribution</button>
+    <button style="margin-left: 10px; margin-right: 10px;" mat-flat-button  (click)="cluster_gender_dist()">Cluster Gender Distribution</button>
+    <button style="margin-left: 10px; margin-right: 10px;" mat-flat-button  (click)="country_dist()">Country Distribution</button>
+    <button style="margin-left: 10px; margin-right: 10px;" mat-flat-button  (click)="cluster_country_dist()">Cluster Country Distribution</button>
+    </span>
+
+
+    
+  </mat-toolbar>
+
+  <div *ngIf="bool1"><app-cluster-dist ></app-cluster-dist></div>
+  <div *ngIf="bool2"><app-gender-dist ></app-gender-dist></div>
+  <div *ngIf="bool3"><app-cluster-gender-dist ></app-cluster-gender-dist></div>
+  <div *ngIf="bool4"><app-country-dist></app-country-dist></div>
+  <div *ngIf="bool5"><app-cluster-country-dist ></app-cluster-country-dist></div>
+  
+  
+  
+  
+
+

@@ -1,0 +1,12 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Cluster App</span>
+    <span class="example-spacer">
+    <button style="margin-left: 10px; margin-right: 10px;" mat-flat-button  (click)="insights()">Insights</button>
+    <button style="margin-left: 10px; margin-right: 10px;" mat-flat-button  (click)="profile()">Profile</button>
+    <button *ngIf="access" style="margin-left: 10px; margin-right: 10px;" mat-flat-button  (click)="admin()">Admin</button>
+    </span>
+    <button style="margin-left: 10px; margin-right: 10px;" mat-flat-button  (click)="logout()">Logout</button>
+  </mat-toolbar>
